@@ -26,18 +26,34 @@ const router = new Router();
 router.get('/', async (ctx) => {
   const files = await getSubs('./public/subtitles');
 
-  console.log(files);
-
   ctx.response.body = `<!DOCTYPE html>
     <html>
-      <head><title>Hello oak!</title><head>
+      <head><title>Kochikame Substation</title><head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap" rel="stylesheet">
       <body>
-        <h1>Hello oak!</h1>
+        <style>
+         * {
+           box-sizing: border-box;
+        }
+
+          body {
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 16px:
+          }
+
+          li {
+           margin-bottom: 8px;
+          }
+        </style>
+        <h1>Kochikame Substation</h1>
+        <p>Kochikame eng subtitles (AI generated)</p>
         <ul>
          ${
     files.map((file) =>
       `<li><a href="/public/subtitles/${file}" download>${file}</a></li>`
-    )
+    ).join('')
   }
         </ul>
       </body>

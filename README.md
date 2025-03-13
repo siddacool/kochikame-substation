@@ -1,5 +1,7 @@
 # Kochikame Substation
 
+Kochikame eng subtitles (AI generated)
+
 https://kochikame-substation.deno.dev/
 
 ---
